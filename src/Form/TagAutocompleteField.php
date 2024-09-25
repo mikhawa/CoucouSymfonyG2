@@ -17,6 +17,7 @@ class TagAutocompleteField extends AbstractType
             'class' => Tag::class,
             'placeholder' => 'Choose a Tag',
             'choice_label' => 'tagName',
+            'choice_value' => 'tagName',
 
             // choose which fields to use in the search
             // if not passed, *all* fields are used

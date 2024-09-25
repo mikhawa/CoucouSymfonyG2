@@ -41,7 +41,6 @@ class PostType extends AbstractType
                 'required' => false,
             ])
             ->add('tags', TagAutocompleteField::class, [
-                'placeholder' => 'Choose a Tag',
                 'autocomplete' => true,
                 'tom_select_options' => [
                     'create' => true,
