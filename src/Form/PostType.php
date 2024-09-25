@@ -11,7 +11,6 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -19,6 +18,9 @@ class PostType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+
+
+
         $builder
             ->add('postTitle')
             ->add('postDescription')
@@ -38,13 +40,16 @@ class PostType extends AbstractType
                 'expanded' => true,
                 'required' => false,
             ])
-            ->add('tags', TextType::class, [
+            ->add('tags', TagAutocompleteField::class, [
+                'placeholder' => 'Choose a Tag',
                 'autocomplete' => true,
                 'tom_select_options' => [
                     'create' => true,
                     'createOnBlur' => true,
                     'delimiter' => ',',
                 ],
+                'multiple' => true,
+                'required' => false,
             ])
             ->add('user', EntityType::class, [
                 'class' => User::class,

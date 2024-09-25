@@ -16,7 +16,7 @@ class TagAutocompleteField extends AbstractType
         $resolver->setDefaults([
             'class' => Tag::class,
             'placeholder' => 'Choose a Tag',
-            // 'choice_label' => 'name',
+            'choice_label' => 'tagName',
 
             // choose which fields to use in the search
             // if not passed, *all* fields are used
