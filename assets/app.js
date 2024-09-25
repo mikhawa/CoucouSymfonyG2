@@ -8,8 +8,12 @@ import './bootstrap.js';
 
 import './bootstrap.bundle.min.js';
 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import './styles/app.css';
+
+import 'tom-select/dist/css/tom-select.default.css';
+
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');

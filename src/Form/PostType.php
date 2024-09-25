@@ -6,10 +6,12 @@ use App\Entity\Post;
 use App\Entity\Section;
 use App\Entity\Tag;
 use App\Entity\User;
+use App\Form\TagAutocompleteField;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -36,9 +38,13 @@ class PostType extends AbstractType
                 'expanded' => true,
                 'required' => false,
             ])
-            ->add('tags', CollectionType::class, [
-                'entry_type' => Tag::class,
-                'required' => false,
+            ->add('tags', TextType::class, [
+                'autocomplete' => true,
+                'tom_select_options' => [
+                    'create' => true,
+                    'createOnBlur' => true,
+                    'delimiter' => ',',
+                ],
             ])
             ->add('user', EntityType::class, [
                 'class' => User::class,

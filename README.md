@@ -752,6 +752,12 @@ https://symfony.com/bundles/ux-autocomplete/current/index.html
 
     composer require symfony/ux-autocomplete
 
-puis gestion de l'autocomplete :
+Puis gestion de l'auto-complete :
 
     php bin/console make:autocomplete-field
+
+Importation des fichiers nécessaires dans `assets/app.js`
+
+    php bin/console importmap:require tom-select/dist/css/tom-select.default.css
+
+https://symfony.com/bundles/ux-autocomplete/current/index.html#passing-extra-options-to-the-ajax-powered-autocomplete
