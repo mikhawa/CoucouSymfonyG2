@@ -40,15 +40,11 @@ class PostType extends AbstractType
                 'expanded' => true,
                 'required' => false,
             ])
-            ->add('tags', TagAutocompleteField::class, [
-                'autocomplete' => true,
-                'tom_select_options' => [
-                    'create' => true,
-                    'createOnBlur' => true,
-                    'delimiter' => ',',
-                ],
-                'multiple' => true,
+            ->add('tags', TagAutocompleteField::class, options: [
                 'required' => false,
+                'attr' => [
+                    'data-controller' => 'custom-autocomplete',
+                ],
             ])
             ->add('user', EntityType::class, [
                 'class' => User::class,
